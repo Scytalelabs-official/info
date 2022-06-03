@@ -343,7 +343,7 @@ const getChartData = async (oldestDateToFetch, offsetData) => {
       let result = await v2client.query({
         query: GLOBAL_CHART,
         variables: {
-          startTime: date,
+          startTime: oldestDateToFetch,
           skip,
         },
         fetchPolicy: 'cache-first',

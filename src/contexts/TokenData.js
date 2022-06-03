@@ -245,7 +245,7 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
     let tokenids2 = await v2client.query({
       query: TOKEN_TOP_DAY_DATAS,
       fetchPolicy: 'network-only',
-      variables: { date: date },
+      variables: { date: currentDate },
     })
 
     // console.log("tokenids", tokenids);
