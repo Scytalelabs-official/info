@@ -232,10 +232,15 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
   try {
     // need to get the top tokens by liquidity by need token day datas
     const currentDate = parseInt(Date.now() / 86400 / 1000) * 86400 - 86400
-    console.log("currentDate", currentDate);
-    console.log("utcOneDayBack", utcOneDayBack);
-    console.log("utcTwoDaysBack", utcTwoDaysBack);
-    const date = "1656335816";
+    // console.log("Date.now()", Date.now());
+    // console.log("Date.now() / 86400", Date.now() / 86400);
+    // console.log("Date.now() / 86400 / 1000", Date.now() / 86400 / 1000);
+    // console.log("parseInt(Date.now() / 86400 / 1000)", parseInt(Date.now() / 86400 / 1000));
+    // console.log("parseInt(Date.now() / 86400 / 1000) * 86400", parseInt(Date.now() / 86400 / 1000) * 86400);
+    // console.log("currentDate", currentDate);
+    // console.log("utcOneDayBack", utcOneDayBack);
+    // console.log("utcTwoDaysBack", utcTwoDaysBack);
+    const date = "1658188800";
     // console.log(date);
     // let tokenids = await client.query({
     //   query: TOKEN_TOP_DAY_DATAS,
@@ -245,7 +250,7 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
     let tokenids2 = await v2client.query({
       query: TOKEN_TOP_DAY_DATAS,
       fetchPolicy: 'network-only',
-      variables: { date: currentDate },
+      variables: { date: currentDate.toString() },
     })
 
     // console.log("tokenids", tokenids);
